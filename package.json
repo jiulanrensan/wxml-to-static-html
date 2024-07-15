@@ -1,0 +1,21 @@
+{
+  "name": "wxml-ast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wxml/generator": "^0.1.0",
+    "@wxml/parser": "^0.4.0",
+    "@wxml/traverse": "^0.0.3"
+  },
+  "devDependencies": {
+    "eslint": "8.8.0",
+    "prettier": "^3.3.3"
+  }
+}

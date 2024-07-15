@@ -1,0 +1,9 @@
+*.css
+*.less
+*.scss
+*.jpg
+*.png
+*.gif
+*.svg
+dist
+static
