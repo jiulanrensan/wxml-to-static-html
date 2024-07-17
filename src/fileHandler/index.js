@@ -9,9 +9,9 @@ function readFile(filePath) {
   }
 }
 
-async function writeFile(str) {
+async function writeFile(str, filePath) {
   try {
-    await fs.writeFile(path.resolve('./static/output.html'), str)
+    await fs.writeFile(path.resolve(filePath), str)
   } catch (error) {
     console.log('error', error)
   }

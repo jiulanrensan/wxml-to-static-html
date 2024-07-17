@@ -24,7 +24,7 @@ async function main() {
   const ast = parse(wxmlStr)
   traverseAST(ast)
   const code = generate(ast)
-  writeFile(code)
+  writeFile(code, './static/output.html')
 }
 
 main()
