@@ -1,4 +1,4 @@
-const { wxmlToHtmlInCss } = require('../const')
+const { wxmlToHtmlInCss } = require('../wxml/const')
 const { readFile } = require('../fileHandler')
 const cssParser = require('css')
 const { rpx2px } = require('./utils')
@@ -12,7 +12,7 @@ const { simulateDeviceInfo } = require('../config')
  */
 
 function tagTransform(selectors) {
-  return selectors.map((se) => wxmlToHtmlInCss[se])
+  return selectors.map((se) => wxmlToHtmlInCss[se] || se)
 }
 
 function rpxTransform(declaretion) {
@@ -52,12 +52,19 @@ async function cssParse(filePath) {
     const cssStr = await readFile(filePath)
     const ast = cssParser.parse(cssStr)
     transform(ast.stylesheet)
-    console.log('ast', ast)
+    return ast
+    // console.log('ast', ast)
   } catch (error) {
     console.log('cssParse', error)
+    throw new Error(error)
   }
+}
+
+function cssGenerate(ast) {
+  return cssParser.stringify(ast)
 }
 
 module.exports = {
   cssParse,
+  cssGenerate,
 }

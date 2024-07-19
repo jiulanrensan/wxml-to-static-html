@@ -50,16 +50,8 @@ const ElementType = {
 
 const ignoreKey = ['wx:if', 'wx:elif', 'wx:else', 'wx:for', 'wx:for-index', 'wx:for-item', 'wx:key']
 
-const wxmlToHtmlInCss = {
-  Page: 'body',
-  image: 'img',
-  text: tagMap['text'],
-  view: tagMap['view'],
-}
-
 module.exports = {
   tagMap,
   ElementType,
   ignoreKey,
-  wxmlToHtmlInCss,
 }
