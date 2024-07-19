@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^20.14.11",
     "@wxml/generator": "^0.1.0",
     "@wxml/parser": "^0.4.0",
     "@wxml/traverse": "^0.0.3",
