@@ -2,6 +2,12 @@ const { tagTransform, rpxTransform } = require('./transform')
 
 function traversal(stylesheet) {
   stylesheet.rules.forEach((rule) => {
+    /**
+     * @typedef Rule
+     * @property {string} Rule.type
+     * @property {string[]} Rule.selectors
+     * @property {{property: string;value: string}[]} Rule.declarations
+     */
     if (rule.type === 'rule') {
       // declarations: css key-value
       // selectors: class name
