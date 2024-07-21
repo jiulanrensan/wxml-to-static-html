@@ -29,7 +29,7 @@ async function main() {
   const cssAst = await cssParse(path.resolve(__dirname, './static/input/index.wxss'))
   const cssCode = cssGenerate(cssAst)
   // writeFile(htmlCode, path.resolve(__dirname, './static/output.html'))
-  writeFile(cssCode, path.resolve(__dirname, './static/output.css'))
+  writeFile(cssCode, path.resolve(__dirname, './static/output/index.css'))
 }
 
 main()

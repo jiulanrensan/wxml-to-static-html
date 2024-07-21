@@ -1,4 +1,4 @@
-const { wxmlToHtmlInCss } = require('../wxml/const')
+const { wxmlToHtmlInCss } = require('./const')
 const { readFile } = require('../fileHandler')
 const cssParser = require('css')
 const { rpx2px } = require('./utils')
@@ -18,9 +18,13 @@ function tagTransform(selectors) {
 function rpxTransform(declaretion) {
   const { value } = declaretion
   if (!value || !value.includes('rpx')) return
-  const rpxValue = value.split('rpx')[0]
+  // 数值可能有一个，可能有多个
+  // 例如：padding: 0 24rpx; padding: 24rpx 24rpx 24rpx;
   Object.assign(declaretion, {
-    value: `${rpx2px(rpxValue, simulateDeviceInfo)}px`,
+    value: value
+      .split(' ')
+      .map((value) => rpx2px(value, simulateDeviceInfo))
+      .join(' '),
   })
 }
 
