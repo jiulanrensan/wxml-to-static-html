@@ -22,6 +22,9 @@ const ambiguityTagRightMoveOne = {
   picker: 'picker-',
 }
 
+/**
+ * 标签转换
+ */
 function tagTransform(selectors) {
   // 选择器有可能是级联，且级联的每一项都有可能需要转换
   return selectors.map((se) => {
@@ -69,6 +72,9 @@ function tagTransform(selectors) {
   })
 }
 
+/**
+ * rpx转换
+ */
 function rpxTransform(declaretion) {
   const { value } = declaretion
   if (!value || !value.includes('rpx')) return
