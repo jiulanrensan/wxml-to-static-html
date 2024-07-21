@@ -20,11 +20,11 @@ const tagMap = {
   picker: 'div',
   'picker-view': 'div',
   radio: (element, helper) => {
-    return `<input type="radio"`
+    return `<input type="radio" />`
   },
   slider: 'div',
   switch: (element, helper) => {
-    return `<input type="checkbox"`
+    return `<input type="checkbox />"`
   },
   textarea: 'textarea',
   audio: 'object',
