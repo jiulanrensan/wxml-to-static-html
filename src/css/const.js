@@ -2,7 +2,7 @@ const { tagMap } = require('../wxml/const')
 
 const wxmlToHtmlInCss = {
   Page: 'body',
-  image: 'img',
+  image: tagMap['image'],
   text: tagMap['text'],
   view: tagMap['view'],
 }
